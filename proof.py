@@ -12,7 +12,7 @@ riscv_isa_imply = []
 def load_json():
     global ext_bitmask, hwprobe, riscv_isa_imply, ext_bitmask_child
     with open('info/ext_bitmask.json', 'r') as f:
-        ext_bitmask = json.load(f)['ext_bitmask']
+        ext_bitmask = list(json.load(f)['ext_bitmask'].values())
     with open('info/hwprobe.json', 'r') as f:
         hwprobe = json.load(f)['hwprobe']
     with open('info/riscv_isa_imply.json', 'r') as f:
