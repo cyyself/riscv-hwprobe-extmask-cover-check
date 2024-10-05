@@ -32,7 +32,7 @@ def gen_riscv_ext_bitmask_table():
     max_len = max([len(i[1]) for i in tmp])
     for i in tmp:
         space_append = ' ' * (max_len + 1 - len(i[1]))
-        print(f'    "{i[1]}",{space_append}{int(i[2])//64}, {int(i[2])%64:2d},')
+        print(f'    {{"{i[1]}",{space_append}{int(i[2])//64}, {int(i[2])%64:2d}}},')
 
 load_json()
 gen_riscv_ext_bitmask_table()
